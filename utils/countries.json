@@ -1,0 +1,194 @@
+[
+    {
+        "name": "United States of America",
+        "label": "+1"
+    },
+    {
+        "name": "Canada",
+        "label": "+1"
+    },
+    {
+        "name": "Albania",
+        "label": "+355"
+    },
+    {
+        "name": "Andorra",
+        "label": "+376"
+    },
+    {
+        "name": "Austria",
+        "label": "+43"
+    },
+    {
+        "name": "Belarus",
+        "label": "+375"
+    },
+    {
+        "name": "Belgium",
+        "label": "+32"
+    },
+    {
+        "name": "Bosnia and Herzegovina",
+        "label": "+387"
+    },
+    {
+        "name": "Bulgaria",
+        "label": "+359"
+    },
+    {
+        "name": "China",
+        "label": "+86"
+    },
+    {
+        "name": "Croatia",
+        "label": "+385"
+    },
+    {
+        "name": "Czech Republic",
+        "label": "+420"
+    },
+    {
+        "name": "Denmark",
+        "label": "+45"
+    },
+    {
+        "name": "Estonia",
+        "label": "+372"
+    },
+    {
+        "name": "Finland",
+        "label": "+358"
+    },
+    {
+        "name": "France",
+        "label": "+33"
+    },
+    {
+        "name": "Germany",
+        "label": "+49"
+    },
+    {
+        "name": "Greece",
+        "label": "+30"
+    },
+    {
+        "name": "Hungary",
+        "label": "+36"
+    },
+    {
+        "name": "Iceland",
+        "label": "+354"
+    },
+    {
+        "name": "India",
+        "label": "+91"
+    },
+    {
+        "name": "Ireland",
+        "label": "+353"
+    },
+    {
+        "name": "Italy",
+        "label": "+39"
+    },
+    {
+        "name": "Japan",
+        "label": "+81"
+    },
+    {
+        "name": "Latvia",
+        "label": "+371"
+    },
+    {
+        "name": "Liechtenstein",
+        "label": "+423"
+    },
+    {
+        "name": "Lithuania",
+        "label": "+370"
+    },
+    {
+        "name": "Luxembourg",
+        "label": "+352"
+    },
+    {
+        "name": "Macedonia",
+        "label": "+389"
+    },
+    {
+        "name": "Malta",
+        "label": "+356"
+    },
+    {
+        "name": "Moldova",
+        "label": "+373"
+    },
+    {
+        "name": "Monaco",
+        "label": "+377"
+    },
+    {
+        "name": "Montenegro",
+        "label": "+382"
+    },
+    {
+        "name": "Netherlands",
+        "label": "+31"
+    },
+    {
+        "name": "Norway",
+        "label": "+47"
+    },
+    {
+        "name": "Poland",
+        "label": "+48"
+    },
+    {
+        "name": "Portugal",
+        "label": "+351"
+    },
+    {
+        "name": "Romania",
+        "label": "+40"
+    },
+    {
+        "name": "Russia",
+        "label": "+7"
+    },
+    {
+        "name": "San Marino",
+        "label": "+39"
+    },
+    {
+        "name": "Serbia",
+        "label": "+381"
+    },
+    {
+        "name": "Slovakia",
+        "label": "+421"
+    },
+    {
+        "name": "Slovenia",
+        "label": "+386"
+    },
+    {
+        "name": "Spain",
+        "label": "+34"
+    },
+    {
+        "name": "Sweden",
+        "label": "+46"
+    },
+    {
+        "name": "Switzerland",
+        "label": "+41"
+    },
+    {
+        "name": "Ukraine",
+        "label": "+380"
+    },
+    {
+        "name": "United Kingdom",
+        "label": "+44"
+    }
+]

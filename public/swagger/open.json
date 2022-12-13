@@ -1,0 +1,711 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0",
+        "title": "Venn user service",
+        "description": "All open APIs that doesn't requires JWT header",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "support@getvenn.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:2331",
+            "description": "Local server"
+        },
+        {
+            "url": "http://104.131.14.223:2331",
+            "description": "Staging server"
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/v1/user/checkReferral": {
+            "post": {
+                "summary": "Validate Referral Code Send By Existing User OR Admin",
+                "tags": [
+                    "User"
+                ],
+              
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/ReferralCode"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/signup": {
+            "post": {
+                "summary": "Sign up using Email Id",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/SignUp"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/verifyEmail": {
+            "post": {
+                "summary": "Verify Email ID By Entering Four Digit Code ",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/VerifyEmail"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/login": {
+            "post": {
+                "summary": "Login Using Email ID",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/Login"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/terms": {
+            "post": {
+                "summary": "Accept Terms and Conditions",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/Terms"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/waitlist": {
+            "post": {
+                "summary": "Join Waitlist",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/Waitlist"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/profile": {
+            "post": {
+                "summary": "Create User Basic Profile",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/Profile"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/resendcode": {
+            "post": {
+                "summary": "Resend Email Verification Code",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/Resend"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/logout": {
+            "post": {
+                "summary": "Logout",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/Logout"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/sociallogin": {
+            "post": {
+                "summary": "Get Authoraization Social Login ID",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/SocialLogin"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/sendemail": {
+            "post": {
+                "summary": "Send Email With Four Digit Code For Forget Password",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/SendEmail"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/verifyemailcode": {
+            "post": {
+                "summary": "Verify Four Digit Code For Forget Password Which Send to Registred Email Id",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/VerifyEmailcode"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/updatepassword": {
+            "post": {
+                "summary": "Update New Password",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/UpdatePassword"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/publicprofile": {
+            "post": {
+                "summary": "Create Help Provider Profile Details",
+                "tags": [
+                    "User"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/PublicProfile"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/user/state/:value": {
+            "get":{
+                "summary": "State",
+                "tags": [
+                    "User"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "value",
+                        "type":"number",
+                        "required": true,
+                        "description": "State"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/user/city/:value": {
+           "get": {
+               "summary": "City",
+                "tags": [
+                    "User"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "value",
+                        "type":"number",
+                        "required": true,
+                        "description": "City"
+                    }
+            ],
+            "responses": {}
+        }
+        },
+        "/v1/user/apple/callback": {
+            "post": {
+                "summary": "Apple Login",
+                 "tags": [
+                     "User"
+                 ],
+                 "consumes": [
+                     "application/json"
+                 ],
+                 "produces": [
+                     "application/json"
+                 ],
+                 "parameters": [
+                     {
+                         "in": "body",
+                         "name": "body",
+                         "type":"object",
+                         "required": true,
+                         "description": "Apple Login Details"
+                     }
+                ],
+                 "responses": {}
+            }
+        },
+        "/v1/admin/login": {
+            "post": {
+                "summary": "Login Using Email ID",
+                "tags": [
+                    "Admin"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/AdminLogin"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/admin/logout": {
+            "post": {
+                "summary": "Logout",
+                "tags": [
+                    "Admin"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/AdminLogout"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/admin/reports/{key}": {
+            "post": {
+                "summary": "Reports",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "type":"string",
+                        "required": true,
+                        "description": "Reports"
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "components": {
+        "ReferralCode": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                    "referralCode":"111111"
+            }
+        },
+        "SignUp": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "isSocialLogin": {
+                    "type": "boolean"
+                },
+                "socialLoginType": {
+                    "type": "number"
+                },
+                "socialLoginCode": {
+                    "type": "boolean"
+                }
+            },
+            "example": {
+                    "firstName":"rajesh",
+                    "lastName":"k",
+                    "emailId":"sasi4@gmail.com",
+                    "password":"rajesh@123",
+                    "isSocialLogin":true,
+                    "socialLoginType":2,
+                    "socialLoginCode":"asfdsfeasadcsfdas"
+            }
+        },
+        "VerifyEmail": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId":"rajeshworldstar@gmail.com",
+                "code":"6083"
+            }
+        },
+        "Login": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId": "rajeshworldstar@gmail.com",
+                "password": "rajesh@123"
+              }
+        },
+        "Terms": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "userId":"1",
+                "data":"Iacceppted the terms and condition"
+            }
+        },
+        "Waitlist": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "emailId": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "firstName": "rajesh",
+                "lastName": "k",
+                "emailId": "rajeshsvce3994@gmail.com"
+              }
+        },
+        "Profile": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "refferedBy": {
+                    "type": "String"
+                }
+            },
+            "example": {
+                "userId": "1",
+                "firstName": "rajesh",
+                "lastName": "k",
+                "country": "India",
+                "state": "Tamil Nadu",
+                "city": "Chennai",
+                "refferedBy": { "name":"Rajesh",
+                                    "profile":"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+                                    "location":"Toranto, ON"        
+                                 }
+            }
+        },
+        "Resend": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId": "rajeshworldstar@gmail.com"
+                }
+        },
+        "Logout": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string"
+                }  
+            },
+            "example": {"userId":"2"}
+        },
+        "SocialLogin": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                }  
+            },
+            "example": {
+                "emailId":"rajeshsvce3993@gmail.com"
+            }
+        },
+        "SendEmail": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId":"rajeshsvce3993@gmail.com"
+            }
+        },
+        "VerifyEmailcode": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId":"rajeshsvce3993@gmail.com",
+                "code":"1776"
+            }
+        },
+        "UpdatePassword": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId":"rajeshsvce3993@gmail.com",
+                "password":"rajesh@123"
+            }
+        },
+        "PublicProfile": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "type": "string"
+                },
+                "socialLinks": {
+                    "type": "object"
+                },
+                "userBio": {
+                    "type": "string"
+                },
+                "topicName": {
+                    "type": "string"
+                },
+                "userExperience": {
+                    "type": "string"
+                }, 
+                "helpKeywords": {
+                    "type": "object"
+                }
+            },
+            "example": {
+                "image":"https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50",
+                "socialLinks":[{
+                                "name": "linkdin",
+                                "link":"http://linkdin.in"
+                                },
+                                {
+                                "name": "facebook",
+                                "link":"http://facebook.in"
+                                },
+                               {
+                                "name": "twitter",
+                                "link":"http://twitter.in"
+                                }],
+               "userBio":"I having  5 years experience in teaching",
+               "topicName":"Guitter",
+               "userExperience":"Basic",
+               "helpKeywords":["Guitter","test"]
+             }
+        },
+        "AdminLogin": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId": "venn@joshiinc.com",
+                "password": "venn@123"
+              }
+        },
+        "AdminLogout": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string"
+                }  
+            },
+            "example": {"userId":"1"}
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}

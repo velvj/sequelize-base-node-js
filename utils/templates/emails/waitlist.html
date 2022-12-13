@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+    crossorigin="anonymous" />
+  <title>Venn Email Template</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    * {
+    font-family: 'Roboto', sans-serif;
+  }
+
+.main{
+width: 45%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-image{
+    margin: 30px;
+}
+
+.body{
+    text-align: left;
+}
+
+.bold-text{
+    font-weight: 600;
+}
+
+.footer-text{
+    font-weight: 600;
+    margin-top: -15px;
+}
+
+.otp-text{
+    letter-spacing: 7px;
+    font-family: 'Roboto', sans-serif;
+}
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="ui center aligned basic segment">
+
+      <div class="ui horizontal divider bold-text">
+        PLEASE DO NOT RESPOND TO THIS EMAIL
+      </div>
+
+    
+
+      <div class="body">
+    
+        <p>A waitlist request has been received from:</p>
+        <p>Name: {{firstName}} {{lastName}}</p>
+        <p>Email: {{email}}</p>
+
+       
+
+        <p>Thanks!</p>
+        <p class="footer-text">The Venn Team</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+  integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+  crossorigin="anonymous"></script>
+
+</html>

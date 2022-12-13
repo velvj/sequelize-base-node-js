@@ -1,0 +1,376 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "Venn user service",
+        "description": "All Admin APIs that doesn't requires JWT header",
+        "contact": {}
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:2331",
+            "description": "Local server"
+        },
+        {
+            "url": "http://104.131.14.223:2331",
+            "description": "Staging server"
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/v1/admin/login": {
+            "post": {
+                "summary": "Login Using Email ID",
+                "tags": [
+                    "All Open APIs"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/Login"
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/v1/admin/logout": {
+            "post": {
+                "summary": "Logout",
+                "tags": [
+                    "Admin"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/Logout"
+                            }
+                        }
+                    }
+                },
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/v1/admin/reports/{key}": {
+            "post": {
+                "summary": "Based on the key it will generate the report",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "key",
+                        "type":"string",
+                        "required": true,
+                        "description": "user,openQuestion,helpTopic,session"
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/v1/admin/manageUsers/": {
+            "get": {
+                "summary": "manageUsers",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "search",
+                        "type":"string",
+                        "required": false,
+                        "description": "Search user Full Name or Email address"
+                    },
+                    {
+                        "in": "path",
+                        "name": "page",
+                        "type":"string",
+                        "required": true,
+                        "description": "Page number"
+                    },
+                    {
+                        "in": "path",
+                        "name": "limit",
+                        "type":"string",
+                        "required": true,
+                        "description": "Limits per page"
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/v1/admin/updateUserStatus/{status}": {
+            "put": {
+                "summary": "manageUsers",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "status",
+                        "type":"string",
+                        "required": true,
+                        "description": "User Status"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "profile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/AdminUpdateUserStatus"
+                        }
+                    }
+                ],
+                
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/v1/admin/terms": {
+            "post": {
+                "summary": "Update the terms url",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "profile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/terms"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/v1/admin/uploadterms": {
+            "post": {
+              "summary": "Upload the terms content",
+              "tags": ["Admin"],
+              "consumes": ["application/json"],
+              "produces": ["application/json"],
+              "parameters": [
+                {
+                  "in": "formData",
+                  "name": "termsImg",
+                  "type": "file",
+                  "required": true,
+                  "description": "The file to upload"
+                }
+              ],
+              "responses": {},
+              "security": [
+                {
+                  "bearerAuth": []
+                }
+              ]
+            }
+        },
+        "/v1/admin/uploadPolicy": {
+            "post": {
+              "summary": "Upload the policy content",
+              "tags": ["Admin"],
+              "consumes": ["application/json"],
+              "produces": ["application/json"],
+              "parameters": [
+                {
+                  "in": "formData",
+                  "name": "policyContent",
+                  "type": "file",
+                  "required": true,
+                  "description": "The file to upload"
+                }
+              ],
+              "responses": {},
+              "security": [
+                {
+                  "bearerAuth": []
+                }
+              ]
+            }
+        },
+        "/v1/admin/referralcode": {
+            "post": {
+                "summary": "Admin can generate the referral code for the particular user",
+                "tags": [
+                    "Admin"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "profile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/referralcode"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+          
+    },
+    "components": {
+        "Login": {
+            "type": "object",
+            "properties": {
+                "emailId": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "emailId": "venn@joshiinc.com",
+                "password": "venn@123"
+              }
+        },
+        "Logout": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string"
+                }  
+            },
+            "example": {"userId":"1"}
+        },
+        "AdminUpdateUserStatus": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "number"
+                }
+            },
+            "example": {
+                    "userId":2
+            }
+        },
+        "terms": {
+            "type": "object",
+            "properties": {
+                "terms": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                    "terms":"https://venn.s3.ap-south-1.amazonaws.com/uploads/474873c8f31c44eda7dd7cb0d28f9719.pdf"
+            }
+        },
+        "addPolicy": {
+            "type": "object",
+            "properties": {
+                "terms": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                    "policy":"https://venn.s3.ap-south-1.amazonaws.com/uploads/474873c8f31c44eda7dd7cb0d28f9719.pdf"
+            }
+        },
+        "referralcode": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "number"
+                }
+            },
+            "example": {
+                    "userId":1
+            }
+        }
+    },
+    "securitySchemes ": {
+        "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+        }
+    },
+    "securityDefinitions": {
+        "bearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}

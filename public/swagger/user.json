@@ -1,0 +1,1383 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "All APIs require JWT header",
+        "version": "1.0.0",
+        "title": "Venn user service",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "support@getvenn.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "localhost:2331",
+    "basePath": "/v1",
+    "basePaths": {
+        "development": "http://localhost:2319/v1",
+        "stage": "http://104.131.14.223:2331/v1"
+    },
+    "tags": [
+        {
+            "name": "User"
+        },
+        {
+            "name": "Admin"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths":{
+        "/user/allUserDetails": {
+            "get": {
+                "summary": "All User Details",
+                "tags": [
+                    "User"
+                ],
+                "requestBody":{},
+                "responses": {},
+                "security": [
+                    {
+                       "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/profile": {
+            "post" : {
+                "summary": "Profile",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "profile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "profile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/Profile"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/publicprofile": {
+            "post" : {
+                "summary": "Public Profile",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "PublicProfile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Public Profile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/PublicProfile"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            },
+            "get" :{
+                "summary": "Get Public Profile",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "GetPublicProfile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            },
+            "put": {
+                "summary": "Update Public Profile",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UpdatePublicProfile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update Public Profile",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/PublicProfile"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/block": {
+            "post": {
+                "summary": "Block User",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "Block",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Block",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/Block"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            },
+            "get":{
+                "summary": "Get Block User",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "GetBlock",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/unblock": {
+            "post":{
+                "summary": "Unblock User",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "Unblock",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Unblock user",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/Unblock"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/report": {
+            "post":{
+                "summary": "User Report",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "ReportUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "User Report",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/Report"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/status":{
+            "put":{
+                "summary": "Setup Help Provider",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "SetupHelpProvider",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/updatePersonalInfo": {
+            "put": {
+                "summary": "Update User Personal Info",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UpdateUserInfo",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update User Personal Info",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/PersonalInfo"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/getUserPersonalInfo": {
+            "get": {
+                "summary": "Get User Personal Info",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "GetUserInfo",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/uploadimage": {
+            "post":{
+                "summary": "Upload Image",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "Upload Image",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "questionImg",
+                        "type":"file",
+                        "description": "Upload Image",
+                        "required": true
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/uploadterms":{
+            "post":{
+                "summary": "Upload Terms",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UploadTerms",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "termsImg",
+                        "type":"file",
+                        "description": "Upload Terms",
+                        "required": true
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/uploadPolicy":{
+            "post":{
+                "summary": "Upload Policy",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UploadPolicy",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "policyContent",
+                        "description": "Upload Policy",
+                        "required": true,
+                        "type":"file"
+                        
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/verifyLatestTermsAndCondition":{
+            "get":{
+                "summary": "verify Latest Terms And Condition",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "verifyLatestTermsAndCondition",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/acceptTermAndCondition":{
+            "post":{
+                "summary": "accept Term And Condition",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "acceptTermAndCondition",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Accept Term And Condition",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/acceptTermAndCondition"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/userProfileDetails/{userId}": {
+            "get": {
+                "summary": "User Profile Details",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "userProfileDetails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type":"number",
+                        "description": "User Profile Details",
+                        "required": true
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/fileUpload":{
+            "post":{
+                "summary": "File Upload",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "FileUpload",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "commonFile",
+                        "type":"file",
+                        "description": "File Upload",
+                        "required": true
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/updateUserProfilePictiure": {
+            "put": {
+                "summary": "Update User Profile Pictiure",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UpdateUserProfilePictiure",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update User Profile Pictiure",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/UpdateUserProfilePictiure"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/updateUserQuickBio": {
+            "put": {
+                "summary": "Update User Quick Bio",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UpdateUserQuickBio",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update User Quick Bio",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/UpdateUserQuickBio"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/updateUserSocialLink": {
+            "put": {
+                "summary": "Update User Social Link",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UpdateUserSocialLink",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Update User SocialLink",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/UpdateUserSocialLink"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/changePassword":{
+            "put":{
+                "summary": "Change Password",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "ChangePassword",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Change Password",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/ChangePassword"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/deleteAccount": {
+           "delete": {
+                "summary": "Delete User Account",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "DeleteAccount",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "security": [
+                {
+                    "bearerAuth": []
+                }
+                ] 
+            }
+        },
+        "/user/feedback":{
+            "post":{
+                "summary": "User Feedback",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "Feedback",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Feedback",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/Feedback"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ] 
+            }
+        },
+        "/user/sessionDetails": {
+            "post":{
+                "summary": "Session Details",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "Session Details",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Session Details",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/Session"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]  
+            }
+        },
+        "/user/updateLikes/{userId}":{
+            "put":{
+                "summary": "Update User Likes",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UpdateLikes",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type":"number",
+                        "description": "Update Likes",
+                        "required": true
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/getLikes/{userId}":{
+            "get":{
+                "summary": "Get Likes",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "GetLikes",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type":"number",
+                        "description": "Get Likes",
+                        "required": true
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/getOverlayDetails": {
+            "get":{
+                "summary": "Get Overlay Details",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "GetOverlayDetails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/user/updateOverlayDetails": {
+            "put":{
+                "summary": "Update Overlay Details",
+                "tags": [
+                    "User"
+                ],
+                "description": "",
+                "operationId": "UpdatelayDetails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "Update Overlay Details",
+                        "schema":{
+                            "$ref": "#/components/UpdateOverlayDetails"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }, 
+        "/admin/terms":{
+            "post":{
+                "summary": "Terms",
+                "tags": [
+                    "Admin"
+                ],
+                "description": "",
+                "operationId": "Terms",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "Terms",
+                        "schema":{
+                            "$ref": "#/components/AdminTerms"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/admin/addPolicy":{
+            "post":{
+                "summary": "Add Policy",
+                "tags": [
+                    "Admin"
+                ],
+                "description": "",
+                "operationId": "AddPolicy",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "Add Policy",
+                        "schema":{
+                            "$ref": "#/components/AddPolicy"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/admin/updateUserStatus/{status}":{
+            "post":{
+                "summary": "Update User Status",
+                "tags": [
+                    "Admin"
+                ],
+                "description": "",
+                "operationId": "UpdateUserStatus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "status",
+                        "type":"number",
+                        "required": true,
+                        "description": "Update User Status"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "description": "Update User Status",
+                        "schema":{
+                            "$ref": "#/components/UpdateUserStatus"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/admin/userDetails/{userId}":{
+            "get":{
+                "summary": "User Details",
+                "tags": [
+                    "Admin"
+                ],
+                "description": "",
+                "operationId": "UserDetails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type":"number",
+                        "required": true,
+                        "description": "User Details"
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/admin/userTermsAndCondition/{userId}":{
+            "get":{
+                "summary": "User Terms And Condition",
+                "tags": [
+                    "Admin"
+                ],
+                "description": "",
+                "operationId": "UserTermsAndCondition",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type":"number",
+                        "required": true,
+                        "description": "User Terms And Condition"
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/admin/fileUpdatedDetails/{userId}":{
+            "get":{
+                "summary": "File Updated Details",
+                "tags": [
+                    "Admin"
+                ],
+                "description": "",
+                "operationId": "FileUpdatedDetails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userId",
+                        "type":"number",
+                        "required": true,
+                        "description": "File Updated Details"
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components":{
+        "Profile": {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "number"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "userId": "1",
+                "firstName": "Amitabh",
+                "lastName": "kumar",
+                "country": "India",
+                "state": "Jharkhand",
+                "city": "Jamshedpur"
+            }
+        },
+        "PublicProfile":{
+            "type": "object",
+            "properties": {
+                "image": {
+                    "type": "string"
+                },
+                "userBio": {
+                    "type": "string"
+                },
+                "socialLinks": {
+                    "type" : "Array"
+                }
+            },
+            "example":{
+                "image":"https://localhost:3000/amitabh.png",
+                "userBio":"https://localhost:3000/userbio.txt",
+                "socialLinks":[{"name": "Amitabh", "link" : "http://localhost:3000/amitabh"},{"name": "Abhishek", "link" : "http://localhost:3000/abhishek"}]
+            }
+        },
+        "Block":{
+            "type":"object",
+            "properties":{
+                "blockedUserId":{
+                    "type": "number"
+                }
+            },
+            "example":{
+                "blockedUserId": 219
+            }
+        },
+        "Unblock": {
+            "type":"object",
+            "properties":{
+                "unblockedUserId":{
+                    "type": "number"
+                }
+            },
+            "example":{
+                "unblockedUserId": 219
+            }
+        },
+        "Report":{
+            "type":"object",
+            "properties":{
+                "reportUserId":{
+                    "type": "number"
+                },
+                "reason": {
+                    "type": "string"
+                }
+            },
+            "example":{
+                "reportUserId":110,
+	            "reason":"Poor response"
+            }
+        },
+        "PersonalInfo": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "sureName": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                }
+            },
+            "example": {
+                "name": "Amitabh",
+                "sureName": "kumar",
+                "country": "INDIA",
+                "state" : "JHARKHAND",
+                "city" : "JAMSHEDPUR"
+            }
+        },
+        "UpdateUserProfilePictiure":{
+            "type":"object",
+            "properties":{
+                "commonFile":{
+                    "type": "string"
+                }
+            },
+            "example":{
+                "commonFile":"https://venn.s3.ap-south-1.amazonaws.com/uploads/59a24139ff0541bc8ae9ec5f6a2e4032.png"
+            }
+        },
+        "UpdateUserQuickBio":{
+            "type":"object",
+            "properties":{
+                "userBio":{
+                    "type": "string"
+                }
+            },
+            "example":{
+                "userBio":"testing update1"
+            }
+        },
+        "UpdateUserSocialLink":{
+            "type":"object",
+            "properties":{
+                "linkDetails":{
+                    "type": "Array"
+                }
+            },
+            "example":{
+                "linkDetails":[
+                    {
+                    "socialLinkName":"Linkedin2",
+                    "socialLink":"http://Linkedin2"
+                    },
+                     {
+                    "socialLinkName":"Linkedin3",
+                    "socialLink":"http://Linkedin3"
+                    }
+                ]
+            }
+        },
+        "ChangePassword": {
+            "type":"object",
+            "properties":{
+                "oldPassword":{
+                    "type": "string"
+                },
+                "newPassword":{
+                    "type": "string"
+                }
+            },
+            "example":{
+                "oldPassword":"Alagu@123",
+                "newPassword":"Alagu@124"
+            }
+        },
+        "Feedback":{
+            "type":"object",
+            "properties":{
+                "feedbackContent":{
+                    "type": "string"
+                }
+            },
+            "example":{
+                "feedbackContent" : "Good Application"
+            }
+        },
+        "Session":{
+            "type":"object",
+            "properties":{
+                "sessionList":{
+                    "type": "Array"
+                }
+            },
+            "example":{
+                "sessionList": [
+                    {
+                        "userId": 1,
+                        "startTime": 1624946231079,
+                        "endTime": 1624946231079
+                    },
+                     {
+                        "userId": 1,
+                        "startTime": 1624946231079,
+                        "endTime": 1624946231079
+                    }
+                ]
+            }
+        },
+        "UpdateOverlayDetails":{
+            "type":"object",
+            "properties":{
+                "firstTimeUser":{
+                    "type": "Boolean"
+                }
+            },
+            "example":{
+                "firstTimeUser":true
+            }
+        },
+        "AdminTerms":{
+            "type":"object",
+            "properties":{
+                "terms":{
+                    "type": "string"
+                }
+            },
+            "example":{
+                "terms":"https://venn.s3.ap-south-1.amazonaws.com/uploads/474873c8f31c44eda7dd7cb0d28f9719.png"
+            }
+        },
+        "AddPolicy":{
+            "type":"object",
+            "properties":{
+                "policy":{
+                    "type": "string"
+                }
+            },
+            "example":{
+                "policy":"https://venn.s3.ap-south-1.amazonaws.com/uploads/474873c8f31c44eda7dd7cb0d28f9719.png"
+            }
+        },
+        "UpdateUserStatus":{
+            "type":"object",
+            "properties":{
+                "userId":{
+                    "type": "string"
+                }
+            },
+            "example":{
+                "userId" : 1
+            }
+        },
+        "acceptTermAndCondition":{
+
+        }
+        
+       
+    },
+    "securitySchemes ": {
+        "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+        }
+    },
+    "securityDefinitions": {
+        "bearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
+}
